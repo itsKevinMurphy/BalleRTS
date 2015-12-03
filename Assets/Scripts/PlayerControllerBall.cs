@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityStandardAssets.CrossPlatformInput;
-public class PlayerController : NetworkBehaviour
+public class PlayerControllerBall : NetworkBehaviour
 {
 
     //The variables 
@@ -33,7 +33,6 @@ public class PlayerController : NetworkBehaviour
     GameObject[] spawnPoints;
    
     
-    public Transform player;  
     Vector3 movement;
     private Vector3 flat = new Vector3(1, 0, 1);
   
@@ -130,7 +129,7 @@ public class PlayerController : NetworkBehaviour
         if (hit.gameObject.tag == "Player")
 		{
 			playerAttacking = hit.gameObject;
-			float damageFromPlayer = playerAttacking.GetComponent<PlayerController>().damage;
+            float damageFromPlayer = playerAttacking.GetComponent<PlayerControllerBall>().damage;
             GetComponent<PlayerGUI>().health -= damageFromPlayer / defense;
 			Instantiate(Resources.Load("Explosion"), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
             GetComponent<PlayerGUI>().SetCountText();

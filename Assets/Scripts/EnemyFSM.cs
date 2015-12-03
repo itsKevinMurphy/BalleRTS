@@ -187,7 +187,7 @@ public class EnemyFSM : MonoBehaviour
 		if ("Player" == hit.gameObject.tag) {
 			//hP = hP - damage;
             player = hit.gameObject;
-            float damageReceived = player.GetComponent<PlayerController>().damage;
+            float damageReceived = player.GetComponent<PlayerControllerBall>().damage;
             Debug.Log("Enemy hP = " + hP + " - Damage Received: " + damageReceived);
 			hP -= (damageReceived/defense);
             Debug.Log("Enemy hP = " + hP);
@@ -200,9 +200,9 @@ public class EnemyFSM : MonoBehaviour
                 GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
                 foreach (GameObject play in players)
                 {
-                    play.GetComponent<PlayerController>().enemyCount -= 1;
+                    play.GetComponent<PlayerGUI>().enemyCount -= 1;
                 }
-                player.GetComponent<PlayerController>().count += 2000;
+                player.GetComponent<PlayerGUI>().count += 2000;
 				currentState = EnemyState.Dead;
 			}
            

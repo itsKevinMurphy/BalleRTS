@@ -55,7 +55,10 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Home_ID.cs" />
      <Compile Include="Assets\Scripts\NetworkManager_Custom.cs" />
+     <Compile Include="Assets\Scripts\PlayerBase.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerControllerBall.cs" />
+     <Compile Include="Assets\Scripts\PlayerGUI.cs" />
      <Compile Include="Assets\Scripts\Player_ID.cs" />
      <Compile Include="Assets\Scripts\Player_MovementSync.cs" />
      <Compile Include="Assets\Scripts\Player_Network_Setup.cs" />
