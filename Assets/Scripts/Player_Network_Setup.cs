@@ -14,12 +14,13 @@ public class Player_Network_Setup : NetworkBehaviour {
         if (isLocalPlayer)
         {
             Debug.Log("if Passed");
+            GetComponent<PlayerGUI>().enabled = true;
             GameObject.Find("Scene Camera").SetActive(false);
             script.enabled = true;
             BallCamera.enabled = true;
             Player.GetComponent<Rigidbody>().isKinematic = false;
             listener.enabled = true;
-            cameraControlScript.enabled = true;
+            cameraControlScript.enabled = true;            
         }
         else
         {

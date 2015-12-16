@@ -1,3 +1,63 @@
 Base path: C:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-13988
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-17716
 Cmd: getPlatforms
+Cmd: compileSnippet
+  api=4 type=0 insize=5087 outsize=6701 kw=POINT pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=5087 outsize=3906 kw=POINT pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=4318 outsize=6555 kw= pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=4318 outsize=1566 kw= pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=6420 outsize=6718 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=6420 outsize=1826 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=7472 outsize=7758 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=7472 outsize=2549 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=74037 outsize=8074 kw=POINT EFFECT_BUMP EFFECT_HUE_VARIATION pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=74037 outsize=3541 kw=POINT EFFECT_BUMP EFFECT_HUE_VARIATION pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=64232 outsize=8123 kw=EFFECT_BUMP EFFECT_HUE_VARIATION pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=64232 outsize=1924 kw=EFFECT_BUMP EFFECT_HUE_VARIATION pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=101075 outsize=8326 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF EFFECT_BUMP EFFECT_HUE_VARIATION pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=101075 outsize=2168 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF EFFECT_BUMP EFFECT_HUE_VARIATION pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=109459 outsize=8838 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF EFFECT_BUMP EFFECT_HUE_VARIATION pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=109459 outsize=3476 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF EFFECT_BUMP EFFECT_HUE_VARIATION pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1171 outsize=7814 kw=EFFECT_HUE_VARIATION pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1171 outsize=1639 kw=EFFECT_HUE_VARIATION pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1333 outsize=495 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1333 outsize=240 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1329 outsize=495 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1329 outsize=240 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1329 outsize=495 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1329 outsize=240 kw= pd= ok=1
+Cmd: compileSnippet
+  api=8 type=0 insize=1333 outsize=2299 kw= pd=UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1333 outsize=240 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1321 outsize=495 kw= pd= ok=1
+Cmd: compileSnippet
+  api=8 type=1 insize=1321 outsize=1544 kw= pd=UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=1
+Cmd: compileSnippet
+  api=1 type=0 insize=1331 outsize=495 kw= pd= ok=1
+Cmd: compileSnippet
+  api=1 type=1 insize=1331 outsize=240 kw= pd= ok=1

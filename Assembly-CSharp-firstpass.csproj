@@ -65,6 +65,7 @@
      <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
      <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
      <Compile Include="Assets\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+     <Compile Include="Assets\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
      <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
      <Compile Include="Assets\Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
@@ -98,32 +99,45 @@
      <Compile Include="Assets\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
      <None Include="Assets\Downloaded Assets\CactusPack\Shaders\VertexBlend.shader" />
      <None Include="Assets\Downloaded Assets\A_piece_of_nature\Readme.txt" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\DotNetZip\DotNetZipLicense.txt" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Multiply.shader" />
      <None Include="Assets\Downloaded Assets\CactusPack\Readme.txt" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\DiffuseAlwaysVisible.shader" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\dependencies.txt" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\_Example Scenes.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Downloaded Assets\Water Flow Free\Shaders\Water Simple.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+     <None Include="Assets\AstarPathfindingProject\Readme_upgrading.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+     <None Include="Assets\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
+     <None Include="Assets\AstarPathfindingProject\Readme.txt" />
      <None Include="Assets\Downloaded Assets\CactusPack\Shaders\Basic_Rimlight.shader" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\JsonFxLicense.txt" />
+     <None Include="Assets\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
      <None Include="Assets\Downloaded Assets\Water Flow Free\!Readme.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Downloaded Assets\Mushroom_Collection\Readme.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
+     <None Include="Assets\AstarPathfindingProject\link.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+ <HintPath>C:/Users/Kevin/Documents/GitHub/NetworkingGamePractice/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.JsonFx">
+ <HintPath>C:/Users/Kevin/Documents/GitHub/NetworkingGamePractice/Assets/AstarPathfindingProject/Plugins/JsonFx/Pathfinding.JsonFx.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class PlayerGUI : MonoBehaviour {
+public class PlayerGUI : MonoBehaviour
+{
     //if the player has decided to collect object
     public bool isInteractingTree = false;
     public bool isInteractingRock = false;
@@ -12,7 +13,7 @@ public class PlayerGUI : MonoBehaviour {
     GameObject tree;
     GameObject rock;
     GameObject plant;
-   
+
 
     //The variables to be fed into the GUI
     public int count; //the score number
@@ -21,7 +22,7 @@ public class PlayerGUI : MonoBehaviour {
     public float health;//health is set on start
     public int enemyCount; // the amount of enemies
     int playerCount; //the amount of players 
-    string playerNumber; //the string representation of the player number ie. Player1
+    public string playerNumber; //the string representation of the player number ie. Player1
     public float time;
 
     //text for the GUI
@@ -59,11 +60,14 @@ public class PlayerGUI : MonoBehaviour {
 
         //run methods
         SetStyles();
+        CheckPlayerNumber();
         CheckEnemyAndPlayerCount();
         SetCountText();
     }
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
+        CheckEnemyAndPlayerCount();
         #region not interacting with resource when certain distance away
         //not interacting with resource when certain distance away, clear prompt
         if (plant != null && GetComponent<PlayerControllerBall>().CheckDistance(plant) > 4)
@@ -86,7 +90,7 @@ public class PlayerGUI : MonoBehaviour {
             rock = null;
         }
         #endregion
-	}
+    }
     void OnTriggerEnter(Collider other)
     {
         //if player runs into something, the collider is set by tagging the game object you want to check for
@@ -134,18 +138,6 @@ public class PlayerGUI : MonoBehaviour {
         GUI.Label(new Rect(10, 50, 100, 20), enemyCountText.text, styleEnemy);
         GUI.Label(new Rect(10, 70, 100, 20), playerCountText.text, stylePlayer);
         GUI.Label(new Rect(x, 10, 100, 20), playerNumber, stylePlayer);
-        if (GetComponent<PlayerBase>().baseCreated)
-        {
-            GUI.Label(new Rect(x, 30, 100, 20), GetComponent<PlayerBase>().yourBase.tag, stylePlayer);
-        }
-        if (!GetComponent<PlayerBase>().baseCreated)
-        {
-            if (GUI.Button(new Rect(20, 150, 120, 50), "Build Base"))
-            {
-                GetComponent<PlayerBase>().CheckPlayerForBuild(transform.position, GetComponent<PlayerBase>().yourBase, playerNumber);
-                GetComponent<PlayerBase>().baseCreated = true;
-            }
-        }
 
         #region Interacting with collectable
         //the GUI is only active if the player is interacting with collectable
@@ -216,7 +208,7 @@ public class PlayerGUI : MonoBehaviour {
                 // Make the first button
                 if (GUI.Button(new Rect(120, 40, 80, 50), "Damage"))
                 {
-                    GetComponent<PlayerBase>().spawnEffigies("damage");
+                    GetComponent<PlayerBase>().CmdSpawnEffigies("damage");
                 }
             }
             // Make the second button.
@@ -224,7 +216,7 @@ public class PlayerGUI : MonoBehaviour {
             {
                 if (GUI.Button(new Rect(220, 40, 80, 50), "Speed"))
                 {
-                    GetComponent<PlayerBase>().spawnEffigies("speed");
+                    GetComponent<PlayerBase>().CmdSpawnEffigies("speed");
                 }
             }
             // Make the third button.
@@ -232,7 +224,7 @@ public class PlayerGUI : MonoBehaviour {
             {
                 if (GUI.Button(new Rect(320, 40, 80, 50), "Defense"))
                 {
-                    GetComponent<PlayerBase>().spawnEffigies("defense");
+                    GetComponent<PlayerBase>().CmdSpawnEffigies("defense");
                 }
             }
         }
@@ -260,30 +252,22 @@ public class PlayerGUI : MonoBehaviour {
         players = GameObject.FindGameObjectsWithTag("Player");
         enemyCount = enemies.Length;
         playerCount = players.Length;
+    }
+    void CheckPlayerNumber()
+    {
+        players = GameObject.FindGameObjectsWithTag("Player");
+
+        playerCount = players.Length;
 
         //check for other players and assign player numbers
         if (playerCount == 1)
         {
             playerNumber = "Player1";
-            GetComponent<PlayerBase>().yourBase.gameObject.tag = "Player1Base";
             Debug.Log("I am " + playerNumber);
         }
-        else if (playerCount == 2)
+        else
         {
-            playerNumber = "Player2";
-            GetComponent<PlayerBase>().yourBase.gameObject.tag = "Player2Base";
-            Debug.Log("I am " + playerNumber);
-        }
-        else if (playerCount == 3)
-        {
-            playerNumber = "Player3";
-            GetComponent<PlayerBase>().yourBase.gameObject.tag = "Player3Base";
-            Debug.Log("I am " + playerNumber);
-        }
-        else if (playerCount == 4)
-        {
-            playerNumber = "Player4";
-            GetComponent<PlayerBase>().yourBase.gameObject.tag = "Player4Base";
+            playerNumber = "Player" + playerCount;
             Debug.Log("I am " + playerNumber);
         }
     }
@@ -356,13 +340,13 @@ public class PlayerGUI : MonoBehaviour {
             {
                 //set colour as text
                 styleEnemy.normal.textColor = Color.yellow;
-                enemyCountText.text = "Health: " + enemyCount.ToString();
+                enemyCountText.text = "Enemies: " + enemyCount.ToString();
             }
             else if (enemyCount >= 1 && enemyCount <= 4)
             {
                 //set colour as text
                 styleEnemy.normal.textColor = Color.green;
-                enemyCountText.text = "Health: " + enemyCount.ToString();
+                enemyCountText.text = "Enemies: " + enemyCount.ToString();
             }
         }
         #endregion

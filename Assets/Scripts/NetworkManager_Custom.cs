@@ -5,45 +5,65 @@ using UnityEngine.UI;
 
 public class NetworkManager_Custom : NetworkManager
 {
-	public void StartupHost() {
-		SetPort ();
-		NetworkManager.singleton.StartHost ();
-	}
 
-	public void JoinGame() {
-		SetIPAddress ();
-		SetPort ();
-		NetworkManager.singleton.StartClient ();
-	}
+    PlayerPrefs playerName;
+    public void StartupHost()
+    {
+        SetPort();
+        NetworkManager.singleton.StartHost();
+        SetPlayerName();
+        Debug.Log(SetPlayerName());
+    }
 
-	void SetIPAddress() {
-		string ipAddress = GameObject.Find ("InputFieldIPAddress").transform.FindChild ("Text").GetComponent<Text> ().text;
-		NetworkManager.singleton.networkAddress = ipAddress;
-	}
+    public void JoinGame()
+    {
+        SetIPAddress();
+        SetPort();
+        NetworkManager.singleton.StartClient();
+    }
 
-	void SetPort() {
-		NetworkManager.singleton.networkPort = 7777;
-	}
+    public string SetPlayerName()
+    {
+        string PlayerPrefs = GameObject.Find("InputFieldPlayerName").transform.FindChild("Text").GetComponent<Text>().text;
+        return PlayerPrefs;
+    }
 
-	void OnLevelWasLoaded(int level) {
-		if (level == 0) {
-			SetupMenuSceneButtons ();
-		} else {
-			SetUpOtherSceneButtons ();
-		}
-	}
+    void SetIPAddress()
+    {
+        string ipAddress = GameObject.Find("InputFieldIPAddress").transform.FindChild("Text").GetComponent<Text>().text;
+        NetworkManager.singleton.networkAddress = ipAddress;
+    }
 
-	void SetupMenuSceneButtons() {
-		GameObject.Find ("ButtonStartHost").GetComponent<Button> ().onClick.RemoveAllListeners ();
-		GameObject.Find ("ButtonStartHost").GetComponent<Button> ().onClick.AddListener(StartupHost);
+    void SetPort()
+    {
+        NetworkManager.singleton.networkPort = 7777;
+    }
 
-		GameObject.Find ("ButtonJoinGame").GetComponent<Button> ().onClick.RemoveAllListeners ();
-		GameObject.Find ("ButtonJoinGame").GetComponent<Button> ().onClick.AddListener(JoinGame);
-	}
-	
-	void SetUpOtherSceneButtons() {
-		GameObject.Find ("ButtonDisconnect").GetComponent<Button> ().onClick.RemoveAllListeners ();
-		GameObject.Find ("ButtonDisconnect").GetComponent<Button> ().onClick.AddListener(NetworkManager.singleton.StopHost);
-	}
+    void OnLevelWasLoaded(int level)
+    {
+        if (level == 0)
+        {
+            SetupMenuSceneButtons();
+        }
+        else
+        {
+            SetUpOtherSceneButtons();
+        }
+    }
+
+    void SetupMenuSceneButtons()
+    {
+        GameObject.Find("ButtonStartHost").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("ButtonStartHost").GetComponent<Button>().onClick.AddListener(StartupHost);
+
+        GameObject.Find("ButtonJoinGame").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("ButtonJoinGame").GetComponent<Button>().onClick.AddListener(JoinGame);
+    }
+
+    void SetUpOtherSceneButtons()
+    {
+        GameObject.Find("ButtonDisconnect").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("ButtonDisconnect").GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopHost);
+    }
 
 }

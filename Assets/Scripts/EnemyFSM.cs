@@ -149,7 +149,7 @@ public class EnemyFSM : MonoBehaviour
 
             case EnemyState.Dead:
                 status.text = "Dead";
-                Instantiate(Resources.Load("Explosion"), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+                Instantiate(Resources.Load("Flare"), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
                 Destroy(this.gameObject, 1);
 				//destroy this enemy
 				break;
@@ -164,8 +164,6 @@ public class EnemyFSM : MonoBehaviour
 		int newIndex = Random.Range(1, patrolPoints.Length - 1);
         destinationIndex = (newIndex + destinationIndex) % patrolPoints.Length;
         currentDestinationPoint = patrolPoints[destinationIndex].transform;
-
-
     }
 	//moves enemy towards whatever is passed as the target
 	//target can either be a random point, the player or a resource
@@ -191,17 +189,12 @@ public class EnemyFSM : MonoBehaviour
             Debug.Log("Enemy hP = " + hP + " - Damage Received: " + damageReceived);
 			hP -= (damageReceived/defense);
             Debug.Log("Enemy hP = " + hP);
-            Instantiate(Resources.Load("Explosion"), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);          
+            Instantiate(Resources.Load("Spark"), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);          
 
             if (hP <= 10 && hP >= 1) {
 				currentState = EnemyState.Dying;
 			}
 			if (hP <= 0) {
-                GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-                foreach (GameObject play in players)
-                {
-                    play.GetComponent<PlayerGUI>().enemyCount -= 1;
-                }
                 player.GetComponent<PlayerGUI>().count += 2000;
 				currentState = EnemyState.Dead;
 			}
@@ -210,7 +203,7 @@ public class EnemyFSM : MonoBehaviour
 
         if (hit.gameObject.tag == "Enemy")
         {
-            Instantiate(Resources.Load("Explosion"), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);        
+            Instantiate(Resources.Load("Spark"), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);        
 
             enemyAttacking = hit.gameObject;
             float damageReceivedEnemy = enemyAttacking.GetComponent<EnemyFSM>().damage;

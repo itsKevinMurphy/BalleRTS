@@ -10,7 +10,7 @@ public class PlayerControllerBall : NetworkBehaviour
     //The variables 
     public float damage; //damage to enemies
     public float defense;//the multiplier for defense
-    public float speed = 500; //speed of the player 
+    public float speed = 1000; //speed of the player 
     public float treeDistance; //distance from object
     public float rockDistance;//distance from object
     public float plantDistance;//distance from object
@@ -112,7 +112,7 @@ public class PlayerControllerBall : NetworkBehaviour
             enemy = hit.gameObject;
             float damageFromEnemy = enemy.GetComponent<EnemyFSM>().damage;
             GetComponent<PlayerGUI>().health -= damageFromEnemy / defense;
-            Instantiate(Resources.Load("Explosion"), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+            Instantiate(Resources.Load("Spark"), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
             GetComponent<PlayerGUI>().SetCountText();
             if (GetComponent<PlayerGUI>().health <= 0)
             {
@@ -131,7 +131,7 @@ public class PlayerControllerBall : NetworkBehaviour
 			playerAttacking = hit.gameObject;
             float damageFromPlayer = playerAttacking.GetComponent<PlayerControllerBall>().damage;
             GetComponent<PlayerGUI>().health -= damageFromPlayer / defense;
-			Instantiate(Resources.Load("Explosion"), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+			Instantiate(Resources.Load("Spark"), new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
             GetComponent<PlayerGUI>().SetCountText();
             if (GetComponent<PlayerGUI>().health <= 0)
             {

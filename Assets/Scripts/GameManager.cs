@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     public GameObject speed;
     public GameObject damage;
@@ -19,6 +20,8 @@ public class GameManager : MonoBehaviour
     public int maxSpeedResource = 50;
     public int maxDamageResource = 50;
     public int maxDefenseResource = 50;
+
+   
 
     //respawn time
     public float respawnTime = 30f;
@@ -40,6 +43,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
     }
 
     void SpawnHealth()
@@ -134,4 +138,5 @@ public class GameManager : MonoBehaviour
             Debug.Log("Defense Defense Spawned");
         }
     }
+    
 }
